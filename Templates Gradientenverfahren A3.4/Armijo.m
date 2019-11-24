@@ -18,7 +18,7 @@ scaled_direction_derivative_in_s = gamma * gfx.' * s;
 sigma = 1.0;
 
 % Schleife ueber die Armijo Schritte
-for it = 1:3
+for it = 1:maxit
     
     % Funktionswert an dem Kandidaten fuer die neue Iterierte
     fnext = f(x + sigma * s);

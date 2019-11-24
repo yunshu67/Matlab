@@ -11,7 +11,7 @@
 function [x, fx, steps] = GradientenVerf(f,x0,tol,maxit)
 
 % Armijo Parameter
-Armijo_beta = 0.5;
+Armijo_beta = 0.055;
 Armijo_gamma = 1e-4;
 Armijo_maxit = 20;
 
@@ -39,7 +39,7 @@ for steps = 1 : maxit
         for t = 1 : nDim
             % the partial der:= (f(x1,...,xt+delta,...,xn) - f(x1,...,xt,...,xn)) / delta 
             % where delta is a very small number
-            delta = 0.1;
+            delta = 0.001;
 
             % x1,...,xt+delta,...,xn
             tmpX = x;
@@ -61,15 +61,14 @@ for steps = 1 : maxit
     % Definiere Suchrichtung
     %!!! normalising !!!
     s = -gfx / (norm(gfx,2));
-    s
+    
     
     % Bestimme Schrittweite mit Armijo-Backtracking
     % function [sigma] = Armijo(f,fx,gfx,x,s,beta,gamma,maxit)
     sig = Armijo(f,f(x),gfx,x,s,Armijo_beta,Armijo_gamma,Armijo_maxit);
-    sig
+    
     % Update der Iterierten
-    x += sig * s;
-    x    
+    x += sig * s; 
     % Plotten der Iterierten
     plot(x(1,1),x(2,1),'*')
 end
@@ -81,5 +80,5 @@ end
 
 % Definition des Rueckgabewertes fx
 fx = f (x);
-norm(gfx,2)
+the_final_gradient =  norm(gfx,2)
 end

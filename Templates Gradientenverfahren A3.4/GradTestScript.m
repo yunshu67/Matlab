@@ -8,13 +8,13 @@ close all;
 
 % function-handle zur Zielfunktion
 %f = @Himmelblau;
- f = @Rosenbrock;
+f = @Rosenbrock;
 
 % Startpunkt
 %  x0 = [-0.26;0];
- x0 = [-0.27;0];
-% x0 = [-0.28;0];
-% x0 = [-1.2;1.0];
+ %x0 = [-0.27;0];
+ x0 = [-0.28;0];
+ %x0 = [-1.2;1.0];
 
 % Toleranz des Abbruchkriteriums
 tol = 10^-5; 
