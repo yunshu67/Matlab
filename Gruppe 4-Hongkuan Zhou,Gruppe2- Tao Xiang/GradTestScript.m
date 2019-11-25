@@ -7,14 +7,14 @@ clear all;
 close all;
 
 % function-handle zur Zielfunktion
-%f = @Himmelblau;
+%  f = @Himmelblau;
 f = @Rosenbrock;
 
 % Startpunkt
 %  x0 = [-0.26;0];
- %x0 = [-0.27;0];
- x0 = [-0.28;0];
- %x0 = [-1.2;1.0];
+% x0 = [-0.27;0];
+% x0 = [-0.28;0];
+ x0 = [-1.2;1.0];
 
 % Toleranz des Abbruchkriteriums
 tol = 10^-5; 
@@ -29,6 +29,5 @@ maxit = 1000;
 % Ausfuehren des Gradientenverfahrens
 % [x, fx, steps] = GradientenVerf(f,x0,tol,maxit)
 [x, fx, steps] = GradientenVerf(f,x0,tol,maxit);
-
 
      
