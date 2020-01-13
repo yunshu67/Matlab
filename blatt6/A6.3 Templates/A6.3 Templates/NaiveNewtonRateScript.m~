@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Test Script fuer das naive Newton-Verfahren %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+clear all;
+close all;
+
+% function-handle zu F
+F = @RosenbrockGrad;
+
+% Toleranz des Abbruchkriteriums
+tol = 10^-8; 
+
+% Maximale Anzahl der Newton-Schritte
+maxit = 20;
+
+% Arrays zum Speichern der Daten
+rate1s = zeros(1000,1);
+rate2s = zeros(1000,1);
+
+% Schleife ueber alle Startwerte
+for i = 1:1000  
+    
+    % waehle zufaelligen Startpunkt (mit der Matlab-Funktion rand)
+    % in dem gewuenschten Bereich
+    x0 = 2 * rand(2,1);
+
+    % Ausfuehren des naiven Newton-Verfahrens
+    [x, steps, res, rate1, rate2] = NaiveNewtonRate(F, x0, tol, maxit);
+    % [x, steps, res, rate1, rate2] = NaiveNewtonRateRef(F, x0, tol, maxit);
+    
+    % Speichere Raten, falls nicht degeneriert
+    if ((rate1 ~= Inf) & (rate1 ~= -Inf) &(rate1 ~= nan))
+        
+...
+
+% Berechne die durchschnittlichen Konvergenzraten
+...
+
+
+
